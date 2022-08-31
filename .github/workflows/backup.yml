@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    name: A job to backup this repo to IPFS
+    steps:
+      - name: Backup
+        id: backup
+        uses: dhaiwat10/repobackup-action@v0.1
+      # Use the output from the `hello` step
+      # - name: Get the CID
+      #   run: echo "The time was ${{ steps.backup.outputs.cid }}"

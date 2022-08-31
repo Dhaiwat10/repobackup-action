@@ -20,6 +20,7 @@ async function storeFiles(path = '.') {
 }
 
 try {
+  console.log('hello');
   storeFiles();
 } catch (error: any) {
   core.setFailed(error.message);
