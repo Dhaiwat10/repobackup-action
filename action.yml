@@ -1,0 +1,13 @@
+name: 'Repo backup to IPFS'
+description: 'This action takes a copy of your repo and pushes it to IPFS.'
+# inputs:
+#   who-to-greet: # id of input
+#     description: 'Who to greet'
+#     required: true
+#     default: 'World'
+outputs:
+  cid:
+    description: 'CID of the the ZIP file pushed to IPFS'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
