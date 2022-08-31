@@ -9,6 +9,7 @@ const client = new Web3Storage({ token: API_TOKEN });
 
 async function storeFiles(path = '.') {
   const files = await getFilesFromPath(path);
+  console.log('Files', files);
   for (const f of files) {
     console.log(f);
     // { name: '/path/to/me', stream: [Function: stream] }
