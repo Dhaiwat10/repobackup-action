@@ -1,6 +1,10 @@
 name: 'Repo backup to IPFS'
 description: 'This action takes a copy of your repo and pushes it to IPFS.'
-# inputs:
+inputs:
+  githubToken:
+    description: 'The GitHub token to use for authentication.'
+    required: true
+    default: ${{ secrets.GITHUB_TOKEN }}
 #   who-to-greet: # id of input
 #     description: 'Who to greet'
 #     required: true
