@@ -1,5 +1,6 @@
 import { Web3Storage, getFilesFromPath } from 'web3.storage';
 import core from '@actions/core';
+import github from '@actions/github';
 
 // please dont steal
 const API_TOKEN =
@@ -20,9 +21,21 @@ async function storeFiles(path = '.') {
   // core.setOutput('cid', cid);
 }
 
+async function readRepoFiles() {
+  const githubToken = core.getInput('githubToken');
+  const octokit = github.getOctokit(githubToken);
+  const repoContent = await octokit.rest.repos.getContent({
+    owner: 'dhaiwat10',
+    repo: 'create-web3-frontend',
+    path: '.',
+  });
+
+  console.log(repoContent);
+}
+
 try {
   console.log('hello');
-  storeFiles();
+  readRepoFiles();
 } catch (error: any) {
   core.setFailed(error.message);
 }

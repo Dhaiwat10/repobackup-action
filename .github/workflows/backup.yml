@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Backup
         id: backup
-        uses: dhaiwat10/repobackup-action@v0.3
+        uses: dhaiwat10/repobackup-action@v0.4
       # Use the output from the `hello` step
       # - name: Get the CID
       #   run: echo "The time was ${{ steps.backup.outputs.cid }}"
